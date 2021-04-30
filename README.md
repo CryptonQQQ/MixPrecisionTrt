@@ -18,14 +18,19 @@ python3.8（使用其他版本可能会出现问题）
 
 Conda
 
-## 二. 准备训练好的pytorch-yolov5模型,保存到model_save目录下       
+## 二. 准备压缩的混合精度yolov5模型,保存到model_save目录下       
 
-```
-git clone https://github.com.cnpmjs.org/ultralytics/yolov5.git #下载yolov5
-```
+模型包括两部分：
 
-2.1 yolov5s检测图形结果
+1.strategy
 
+`strategy = [4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 4, 8, 4, 4, 8, 4, 4, 8, 4, 4, 8, 4, 4, 4, 8, 8, 4, 4, 4, 8, 4, 8, 4, 4, 4,
+                4, 8, 4, 6, 4, 8, 4, 4, 8, 6, 4, 4, 8, 4, 8, 8, 6, 4, 4, 8, 4, 4, 8, 4, 8, 4, 4]`
+
+2.模型
+
+链接：https://pan.baidu.com/s/1rwmllGRgHXWLvI62JGAEEg 
+提取码：wuln 
 
 
 ## 三. 导出export.py                                
