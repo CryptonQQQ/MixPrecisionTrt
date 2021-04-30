@@ -48,7 +48,7 @@ strategy = [4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 4, 8, 4, 4, 8, 4, 4, 8, 4, 4, 8, 4, 4,
 
 
 #在netron_yolov5s.py中修改
-
+```
 netron.start('此处填充简化后的onnx模型路径')
 python netron_yolov5s.py                      #即可查看模型输出名
 ```
