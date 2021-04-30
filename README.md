@@ -1,4 +1,4 @@
-# MixPrecisionTrt  TRT2021
+# MixPrecisionTrt 
 
 
 
@@ -14,7 +14,7 @@ tensorrt：7.2.3.4
 
 OpenCV：3.4.2
 
-python3.8（使用其他版本可能会出现问题）
+python3.8
 
 Conda
 
