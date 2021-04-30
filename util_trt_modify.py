@@ -1,25 +1,21 @@
 # tensorrt-lib
 
 import os
+
 import tensorrt as trt
-import pycuda.autoinit
-import pycuda.driver as cuda
-from tensorrt.tensorrt import BuilderFlag
 
 from calibrator import Calibrator
-from torch.autograd import Variable
-import torch
-import numpy as np
-import time
 
 # add verbose
-TRT_LOGGER = trt.Logger(trt.Logger.VERBOSE)  # ** engine可视化 **
-f_layer = open('log.txt','w')
+TRT_LOGGER = trt.Logger(trt.Logger.VERBOSE)  # ** engine锟斤拷锟接伙拷 **
+f_layer = open('log.txt', 'w')
+
 
 # create tensorrt-engine
 # fixed and dynamic
 def get_engine(max_batch_size=1, onnx_file_path="", engine_file_path="", \
-               fp32_mode=False, fp16_mode=False, int4_mode=False, calibration_stream=None, calibration_table_path="", save_engine=False,strategy=None):
+               fp32_mode=False, fp16_mode=False, int4_mode=False, calibration_stream=None, calibration_table_path="",
+               save_engine=False, strategy=None):
     """Attempts to load a serialized engine if available, otherwise builds a new TensorRT engine and saves it."""
 
     def build_engine(max_batch_size, save_engine):
@@ -36,36 +32,38 @@ def get_engine(max_batch_size=1, onnx_file_path="", engine_file_path="", \
             with open(onnx_file_path, 'rb') as model:
                 print('Beginning ONNX file parsing')
                 parser.parse(model.read())
-                #modify the orignal onnx network
-                count=0;
+                # modify the orignal onnx network
+                count = 0;
                 for i in range(network.num_layers):
-                     net=network.get_layer(i)
-                     if (net.type == trt.LayerType.CONVOLUTION and 'Conv' in net.name):
-                         count=count+1;
-                         #network.mark_output(net.get_output(0))
-                         f_layer.write('----1----network.num_layers:' + str(network.num_layers) + '  .the number of the conv is:'+str(count)+'\n')
-                         f_layer.write(net.name + '\n')
-                         f_layer.write(str(net.type) + '\n')
-                         #network.unmark_output(net.get_output(0))
-                         activate = network.add_activation(input=net.get_output(0),
-                                                           type=trt.ActivationType.CLIP)  # return a layer
-                         if(strategy==None):
-                           print('strategy error!')
-                         activate.beta = pow(2,strategy[count-1]-1)-1
-                         activate.alpha = -pow(2,strategy[count-1]-1)
-                         activate.name = 'CLIP_%d' % i
-                         f_layer.write(activate.name +' beta is '+ str(activate.beta)+' and alpha is '+str(activate.alpha) +'\n')
-                         #get the layer next to conv,and input the output of the activation layer.
-                         net_next= network.get_layer(i+1)
-                         net_next.set_input(0,activate.get_output(0))
-                         f_layer.write(net_next.name + '\n')
-                         f_layer.write(str(net_next.type) + '\n')
+                    net = network.get_layer(i)
+                    if (net.type == trt.LayerType.CONVOLUTION and 'Conv' in net.name):
+                        count = count + 1;
+                        # network.mark_output(net.get_output(0))
+                        f_layer.write('----1----network.num_layers:' + str(
+                            network.num_layers) + '  .the number of the conv is:' + str(count) + '\n')
+                        f_layer.write(net.name + '\n')
+                        f_layer.write(str(net.type) + '\n')
+                        # network.unmark_output(net.get_output(0))
+                        activate = network.add_activation(input=net.get_output(0),
+                                                          type=trt.ActivationType.CLIP)  # return a layer
+                        if (strategy == None):
+                            print('strategy error!')
+                        activate.beta = pow(2, strategy[count - 1] - 1) - 1
+                        activate.alpha = -pow(2, strategy[count - 1] - 1)
+                        activate.name = 'CLIP_%d' % i
+                        f_layer.write(activate.name + ' beta is ' + str(activate.beta) + ' and alpha is ' + str(
+                            activate.alpha) + '\n')
+                        # get the layer next to conv,and input the output of the activation layer.
+                        net_next = network.get_layer(i + 1)
+                        net_next.set_input(0, activate.get_output(0))
+                        f_layer.write(net_next.name + '\n')
+                        f_layer.write(str(net_next.type) + '\n')
 
-                         net_next2 = network.get_layer(i + 2)
-                         net_next2.set_input(0,net_next.get_output(0))
-                         net_next2.set_input(1,activate.get_output(0))
-                         f_layer.write(net_next2.name + '\n')
-                         f_layer.write(str(net_next2.type) + '\n')
+                        net_next2 = network.get_layer(i + 2)
+                        net_next2.set_input(0, net_next.get_output(0))
+                        net_next2.set_input(1, activate.get_output(0))
+                        f_layer.write(net_next2.name + '\n')
+                        f_layer.write(str(net_next2.type) + '\n')
                 f_layer.write('----2----network.num_layers:' + str(network.num_layers) + '\n')
                 assert network.num_layers > 0, 'Failed to parse ONNX model. \
                             Please check if the ONNX model is compatible '
@@ -88,7 +86,7 @@ def get_engine(max_batch_size=1, onnx_file_path="", engine_file_path="", \
                 # engine = builder.build_engine(network, config)
                 print('Int4 mode enabled')
             if fp16_mode:
-                builder.strict_type_constraints=True
+                builder.strict_type_constraints = True
                 builder.max_batch_size = max_batch_size
                 builder.max_workspace_size = 1 << 30  # 1GB
                 builder.fp16_mode = fp16_mode

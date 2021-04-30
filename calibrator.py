@@ -1,27 +1,25 @@
-# *** tensorrt校准模块  ***
+# *** tensorrt校准模锟斤拷  ***
 
-import os
-import torch
-import torch.nn.functional as F
-import tensorrt as trt
-import pycuda.driver as cuda
-import pycuda.autoinit
-import numpy as np
 import ctypes
 import logging
-import util_trt_modify
+import os
+
+import pycuda.driver as cuda
+import tensorrt as trt
+
 logger = logging.getLogger(__name__)
 ctypes.pythonapi.PyCapsule_GetPointer.restype = ctypes.c_char_p
 ctypes.pythonapi.PyCapsule_GetPointer.argtypes = [ctypes.py_object, ctypes.c_char_p]
 
+
 # calibrator
-#IInt8EntropyCalibrator2
-#IInt8LegacyCalibrator
-#IInt8EntropyCalibrator
-#IInt8MinMaxCalibrator
+# IInt8EntropyCalibrator2
+# IInt8LegacyCalibrator
+# IInt8EntropyCalibrator
+# IInt8MinMaxCalibrator
 class Calibrator(trt.IInt8EntropyCalibrator):
     def __init__(self, stream, cache_file=""):
-        trt.IInt8EntropyCalibrator.__init__(self)       
+        trt.IInt8EntropyCalibrator.__init__(self)
         self.stream = stream
         self.d_input = cuda.mem_alloc(self.stream.calibration_data.nbytes)
         self.cache_file = cache_file
@@ -31,11 +29,11 @@ class Calibrator(trt.IInt8EntropyCalibrator):
         return self.stream.batch_size
 
     def get_batch(self, names):
-        #print("############################################################")
-        #print(names)
-        #print("############################################################")
+        # print("############################################################")
+        # print(names)
+        # print("############################################################")
         batch = self.stream.next_batch()
-        if not batch.size:   
+        if not batch.size:
             return None
 
         cuda.memcpy_htod(self.d_input, batch)

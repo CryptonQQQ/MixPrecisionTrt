@@ -7,9 +7,11 @@ Usage:
 import argparse
 import sys
 import time
+
+import cv2
 import numpy as np
 import onnxruntime
-import cv2
+
 sys.path.append('./')  # to run '$ python *.py' files in subdirectories
 sys.path.append('./yolov5/')
 
@@ -23,7 +25,7 @@ from utils import general
 from utils import activations
 
 
-def letterbox(img, new_shape=(640,640), color=(114, 114, 114), auto=True, scaleFill=False, scaleup=True, stride=32):
+def letterbox(img, new_shape=(640, 640), color=(114, 114, 114), auto=True, scaleFill=False, scaleup=True, stride=32):
     # Resize and pad image while meeting stride-multiple constraints
     shape = img.shape[:2]  # current shape [height, width]
     if isinstance(new_shape, int):
@@ -55,13 +57,15 @@ def letterbox(img, new_shape=(640,640), color=(114, 114, 114), auto=True, scaleF
     img = cv2.copyMakeBorder(img, top, bottom, left, right, cv2.BORDER_CONSTANT, value=color)  # add border
     return img, ratio, (dw, dh)
 
+
 def to_numpy(tensor):
     return tensor.detach().cpu().numpy() if tensor.requires_grad else tensor.cpu().numpy()
 
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--weights', type=str, default='model_save/yolov5s.pt', help='weights path') 
-    parser.add_argument('--img_path', type=str, default='test_image/bus.jpg', help='source') 
+    parser.add_argument('--weights', type=str, default='model_save/yolov5s.pt', help='weights path')
+    parser.add_argument('--img_path', type=str, default='test_image/bus.jpg', help='source')
     parser.add_argument('--img-size', nargs='+', type=int, default=[640, 640], help='image size')  # height, width
     parser.add_argument('--batch-size', type=int, default=24, help='batch size')
     parser.add_argument('--dynamic', action='store_true', help='dynamic ONNX axes')
@@ -87,12 +91,12 @@ if __name__ == '__main__':
     # Input,picture
     img = cv2.imread(opt.img_path)
     img = letterbox(img, 640, stride=1)[0]
-    img = img[:, :, ::-1].transpose(2, 0, 1)#RGB transpose BRG
-    img = np.ascontiguousarray(img)   #memery continued
+    img = img[:, :, ::-1].transpose(2, 0, 1)  # RGB transpose BRG
+    img = np.ascontiguousarray(img)  # memery continued
     img = torch.from_numpy(img).to(device)
     img = img.float()
     img /= 255.0  # 0 - 255 to 0.0 - 1.0
-    if img.ndimension() == 3:#add a dim in dim0
+    if img.ndimension() == 3:  # add a dim in dim0
         img = img.unsqueeze(0)
     # Update model
     for k, m in model.named_modules():
@@ -104,14 +108,15 @@ if __name__ == '__main__':
                 m.act = activations.SiLU()
         # elif isinstance(m, models.yolo.Detect):
         #     m.forward = m.forward_export  # assign forward (optional)
-    
-    t1=time.time()
+
+    t1 = time.time()
     y = model(img)  # dry run
-    t2=time.time()
+    t2 = time.time()
     model.model[-1].export = not opt.grid  # set Detect() layer grid export
-    
+
     try:
         import onnx
+
         print('\nStarting ONNX export with onnx %s...' % onnx.__version__)
         f = opt.weights.replace('.pt', '.onnx')  # filename
         torch.onnx.export(model, img, f, verbose=True, opset_version=11, input_names=['images'],
@@ -129,13 +134,13 @@ if __name__ == '__main__':
     # compute ONNX Runtime output prediction
     ort_session = onnxruntime.InferenceSession(f)
     ort_inputs = {ort_session.get_inputs()[0].name: to_numpy(img)}
-    t3=time.time()
+    t3 = time.time()
     ort_outs = ort_session.run(None, ort_inputs)
-    t4=time.time()
+    t4 = time.time()
     # compare ONNX Runtime and PyTorch results
 
-    #print(to_numpy(y[1][0][0][0][0][0]))
-    #print(ort_outs[0][0][0][0][0])
+    # print(to_numpy(y[1][0][0][0][0][0]))
+    # print(ort_outs[0][0][0][0][0])
     np.testing.assert_allclose(to_numpy(y[1][0]), ort_outs[0], rtol=1e-03, atol=1e-05)
     mse = np.sqrt(np.mean((to_numpy(y[1][0]) - ort_outs[0]) ** 2))
     print("Inference time with the PyTorch model: {}".format(t2 - t1))

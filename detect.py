@@ -1,20 +1,21 @@
-import sys
-import onnx
-import os
 import argparse
+import os
 import time
-import numpy as np
+
 import cv2
+import matplotlib
+import matplotlib.pyplot as plt
+import numpy as np
 import onnxruntime
 import tensorrt as trt
 import torch
-import matplotlib
-import matplotlib.pyplot as plt
-from PIL import Image, ImageDraw, ImageFont
-from tensorrt_engine import allocate_buffers, to_numpy, do_inference, postprocess_the_outputs
+from PIL import Image
 from utils.general import non_max_suppression
 
-TRT_LOGGER = trt.Logger(trt.Logger.VERBOSE) 
+from tensorrt_engine import allocate_buffers, do_inference, postprocess_the_outputs
+
+TRT_LOGGER = trt.Logger(trt.Logger.VERBOSE)
+
 
 def w_bbox_iou(box1, box2, x1y1x2y2=True):
     if not x1y1x2y2:
@@ -43,7 +44,6 @@ def w_bbox_iou(box1, box2, x1y1x2y2=True):
 
 
 def w_non_max_suppression(prediction, num_classes, conf_thres=0.5, nms_thres=0.4):
-   
     # box_corner = prediction.new(prediction.shape)
     box_corner = torch.FloatTensor(prediction.shape)
     box_corner[:, :, 0] = prediction[:, :, 0] - prediction[:, :, 2] / 2
@@ -54,14 +54,13 @@ def w_non_max_suppression(prediction, num_classes, conf_thres=0.5, nms_thres=0.4
 
     output = [None for _ in range(len(prediction))]
     for image_i, image_pred in enumerate(prediction):
-    
+
         conf_mask = (image_pred[:, 4] >= conf_thres).squeeze()
         image_pred = image_pred[conf_mask]
 
         if not image_pred.size(0):
             continue
 
- 
         class_conf, class_pred = torch.max(image_pred[:, 5:5 + num_classes], 1, keepdim=True)
         detections = torch.cat((image_pred[:, :5], class_conf.float(), class_pred.float()), 1)
         unique_labels = detections[:, -1].cpu().unique()
@@ -70,21 +69,21 @@ def w_non_max_suppression(prediction, num_classes, conf_thres=0.5, nms_thres=0.4
             unique_labels = unique_labels.cuda()
 
         for c in unique_labels:
-       
+
             detections_class = detections[detections[:, -1] == c]
-         
+
             _, conf_sort_index = torch.sort(detections_class[:, 4], descending=True)
             detections_class = detections_class[conf_sort_index]
-        
+
             max_detections = []
             while detections_class.size(0):
-              
+
                 max_detections.append(detections_class[0].unsqueeze(0))
                 if len(detections_class) == 1:
                     break
                 ious = w_bbox_iou(max_detections[-1], detections_class[1:])
                 detections_class = detections_class[1:][ious < nms_thres]
-          
+
             max_detections = torch.cat(max_detections).data
             # Add max detections to outputs
             output[image_i] = max_detections if output[image_i] is None else torch.cat(
@@ -164,7 +163,7 @@ def xywh2xyxy(x):
     return y
 
 
-def detect(official=True, image_path='',engine_model_path='',onnx_model_path=''):
+def detect(official=True, image_path='', engine_model_path='', onnx_model_path=''):
     num_classes = 80
     anchors = [[10, 13, 16, 30, 33, 23], [30, 61, 62, 45, 59, 119], [116, 90, 156, 198, 373, 326]]
     # input
@@ -179,18 +178,18 @@ def detect(official=True, image_path='',engine_model_path='',onnx_model_path='')
     if os.path.exists(onnx_model_path):
         session = onnxruntime.InferenceSession(onnx_model_path)
         # print("The model expects input shape: ", session.get_inputs()[0].shape)
-        #batch_size = session.get_inputs()[0].shape[0]
-        #img_size_h = session.get_inputs()[0].shape[2]
-        #img_size_w = session.get_inputs()[0].shape[3]
+        # batch_size = session.get_inputs()[0].shape[0]
+        # img_size_h = session.get_inputs()[0].shape[2]
+        # img_size_w = session.get_inputs()[0].shape[3]
         input_name = session.get_inputs()[0].name
         outputs = session.run(None, {input_name: img_in})
     elif os.path.exists(engine_model_path):
         with open(engine_model_path, "rb") as f, trt.Runtime(TRT_LOGGER) as runtime:
-            engine_fixed=runtime.deserialize_cuda_engine(f.read())
+            engine_fixed = runtime.deserialize_cuda_engine(f.read())
         context = engine_fixed.create_execution_context()
         inputs, outputs, bindings, stream = allocate_buffers(engine_fixed)
         inputs[0].host = img_in.reshape(-1)
-        
+
         t1 = time.time()
         trt_outputs = do_inference(context, bindings=bindings, inputs=inputs, outputs=outputs,
                                    stream=stream)  # numpy data
@@ -199,7 +198,7 @@ def detect(official=True, image_path='',engine_model_path='',onnx_model_path='')
         outputs[1] = postprocess_the_outputs(trt_outputs[1], (batch_size, 3, 40, 30, 85))
         outputs[2] = postprocess_the_outputs(trt_outputs[2], (batch_size, 3, 20, 15, 85))
     batch_detections = []
-    if official and len(outputs) == 4:   # model.model[-1].export = boolean ---> True:3 False:4
+    if official and len(outputs) == 4:  # model.model[-1].export = boolean ---> True:3 False:4
         # model.model[-1].export = False ---> outputs[0] (1, xxxx, 85)
 
         batch_detections = torch.from_numpy(np.array(outputs[0]))
@@ -267,15 +266,15 @@ def display(detections=None, image_path=None, line_thickness=None, text_bg_alpha
     tl = line_thickness or round(0.002 * (w + h) / 2) + 1
     for i, box in enumerate(boxs):
         x1, y1, x2, y2 = box
-        x1=int(x1)
-        y1=int(y1)
-        x2=int(x2)
-        y2=int(y2)
-
+        x1 = int(x1)
+        y1 = int(y1)
+        x2 = int(x2)
+        y2 = int(y2)
 
         np.random.seed(int(labels[i].numpy()) + 2020)
         color = [np.random.randint(0, 255), 0, np.random.randint(0, 255)]
-        cv2.rectangle(img=image_src, pt1=(int(x1), int(y1)), pt2=(int(x2), int(y2)), color=color, thickness=max(int((w + h) / 600), 1), lineType=cv2.LINE_AA)
+        cv2.rectangle(img=image_src, pt1=(int(x1), int(y1)), pt2=(int(x2), int(y2)), color=color,
+                      thickness=max(int((w + h) / 600), 1), lineType=cv2.LINE_AA)
         label = '%s %.2f' % (class_names[int(labels[i].numpy())], confs[i])
         t_size = cv2.getTextSize(label, 0, fontScale=tl / 3, thickness=1)[0]
         c2 = x1 + t_size[0] + 3, y1 - t_size[1] - 5
@@ -283,13 +282,16 @@ def display(detections=None, image_path=None, line_thickness=None, text_bg_alpha
             cv2.rectangle(image_src, (x1 - 1, y1), c2, color, cv2.FILLED, cv2.LINE_AA)
         else:
 
-            alphaReserve = text_bg_alpha  
+            alphaReserve = text_bg_alpha
             BChannel, GChannel, RChannel = color
             xMin, yMin = int(x1 - 1), int(y1 - t_size[1] - 3)
             xMax, yMax = int(x1 + t_size[0]), int(y1)
-            image_src[yMin:yMax, xMin:xMax, 0] = image_src[yMin:yMax, xMin:xMax, 0] * alphaReserve + BChannel * (1 - alphaReserve)
-            image_src[yMin:yMax, xMin:xMax, 1] = image_src[yMin:yMax, xMin:xMax, 1] * alphaReserve + GChannel * (1 - alphaReserve)
-            image_src[yMin:yMax, xMin:xMax, 2] = image_src[yMin:yMax, xMin:xMax, 2] * alphaReserve + RChannel * (1 - alphaReserve)
+            image_src[yMin:yMax, xMin:xMax, 0] = image_src[yMin:yMax, xMin:xMax, 0] * alphaReserve + BChannel * (
+                    1 - alphaReserve)
+            image_src[yMin:yMax, xMin:xMax, 1] = image_src[yMin:yMax, xMin:xMax, 1] * alphaReserve + GChannel * (
+                    1 - alphaReserve)
+            image_src[yMin:yMax, xMin:xMax, 2] = image_src[yMin:yMax, xMin:xMax, 2] * alphaReserve + RChannel * (
+                    1 - alphaReserve)
         cv2.putText(image_src, label, (x1 + 3, y1 - 4), 0, tl / 3, [255, 255, 255],
                     thickness=1, lineType=cv2.LINE_AA)
         print(box.numpy(), confs[i].numpy(), class_names[int(labels[i].numpy())])
@@ -301,7 +303,7 @@ def display(detections=None, image_path=None, line_thickness=None, text_bg_alpha
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--engine_model_path', type=str, default='', help='model.trt path(s),model_save/yolov5s.trt')
-    parser.add_argument('--img_path', type=str, default='test_image/bus.jpg', help='source') 
+    parser.add_argument('--img_path', type=str, default='test_image/bus.jpg', help='source')
     parser.add_argument('--onnx_model_path', type=str, default='', help='model.onnx path(s),model_save/yolov5s.trt')
     parser.add_argument('--img-size', type=int, default=640, help='inference size (pixels)')
     parser.add_argument('--conf-thres', type=float, default=0.4, help='object confidence threshold')
@@ -309,11 +311,12 @@ if __name__ == '__main__':
     opt = parser.parse_args()
     print(opt)
     matplotlib.use('TKAgg')
-    plt.rcParams['font.sans-serif'] = ['SimHei'] 
+    plt.rcParams['font.sans-serif'] = ['SimHei']
     plt.style.use(['fast'])
     plt.rcParams['figure.facecolor'] = 'gray'
-    batch_size=opt.batch_size
+    batch_size = opt.batch_size
     with torch.no_grad():
-        detections = detect(official=False, image_path=opt.img_path,engine_model_path=opt.engine_model_path,onnx_model_path=opt.onnx_model_path)
+        detections = detect(official=False, image_path=opt.img_path, engine_model_path=opt.engine_model_path,
+                            onnx_model_path=opt.onnx_model_path)
         if detections[0] is not None:
             display(detections[0], opt.img_path, text_bg_alpha=0.6)

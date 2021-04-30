@@ -1,25 +1,26 @@
 # -*-coding:utf-8-*-
-import numpy as np
-import torch
-import torch.nn as nn
-import util_trt_modify
-import util_trt
-import glob, os, cv2
 import argparse
-import pycuda.autoinit
+import glob
+import os
+import time
+
+import cv2
+import numpy as np
+import onnxruntime
 import pycuda.driver as cuda
 import tensorrt as trt
-import time
-import torchvision
-import onnxruntime
-from export import letterbox,to_numpy
+import torch
+
+import util_trt
+import util_trt_modify
+from export import letterbox, to_numpy
+
 BATCH_SIZE = 1
 BATCH = 100
 height = 640
 width = 480
 
 CALIB_IMG_DIR = 'coco/images/train2017'
-
 
 
 def allocate_buffers(engine):
@@ -146,40 +147,46 @@ class DataLoader:
 
 
 def main():
-    strategy=[4]*62
-    print('strategy:',strategy)
+    strategy = [4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 4, 8, 4, 4, 8, 4, 4, 8, 4, 4, 8, 4, 4, 4, 8, 8, 4, 4, 4, 8, 4, 8, 4, 4, 4,
+                4, 8, 4, 6, 4, 8, 4, 4, 8, 6, 4, 4, 8, 4, 8, 8, 6, 4, 4, 8, 4, 4, 8, 4, 8, 4, 4]
+    print('strategy:', strategy)
     # onnx2trt
     fp16_mode = False
     int8_mode = False
     fp32_mode = False
     int4_mode = False
     if opt.quantize == 'int4':
-      int4_mode = True
+        int4_mode = True
     if opt.quantize == 'int8':
-      int8_mode = True
+        int8_mode = True
     elif opt.quantize == 'fp16':
-      fp16_mode = True
+        fp16_mode = True
     elif opt.quantize == 'fp32':
-      fp32_mode = True
+        fp32_mode = True
     else:
-      print('please set appropriate mode for quantification.(--quantize fp32)')
-    
+        print('please set appropriate mode for quantification.(--quantize fp32)')
+
     print('*** onnx to tensorrt begin ***')
     # calibration
     calibration_stream = DataLoader()
     calibration_table = 'model_save/yolov5s_calibration.cache'
     if int4_mode:
-      engine_fixed = util_trt_modify.get_engine(BATCH_SIZE, onnx_file_path=opt.onnx_model_path, engine_file_path=opt.engine_model_path, fp32_mode=fp32_mode, fp16_mode=fp16_mode,
-                                              int4_mode=int4_mode, calibration_stream=calibration_stream,
-                                              calibration_table_path=calibration_table, save_engine=True,strategy=strategy)
+        engine_fixed = util_trt_modify.get_engine(BATCH_SIZE, onnx_file_path=opt.onnx_model_path,
+                                                  engine_file_path=opt.engine_model_path, fp32_mode=fp32_mode,
+                                                  fp16_mode=fp16_mode,
+                                                  int4_mode=int4_mode, calibration_stream=calibration_stream,
+                                                  calibration_table_path=calibration_table, save_engine=True,
+                                                  strategy=strategy)
     else:
-      engine_fixed = util_trt.get_engine(BATCH_SIZE, onnx_file_path=opt.onnx_model_path, engine_file_path=opt.engine_model_path, fp32_mode=fp32_mode, fp16_mode=fp16_mode,
-                                              int8_mode=int8_mode, calibration_stream=calibration_stream,
-                                              calibration_table_path=calibration_table, save_engine=True)
+        engine_fixed = util_trt.get_engine(BATCH_SIZE, onnx_file_path=opt.onnx_model_path,
+                                           engine_file_path=opt.engine_model_path, fp32_mode=fp32_mode,
+                                           fp16_mode=fp16_mode,
+                                           int8_mode=int8_mode, calibration_stream=calibration_stream,
+                                           calibration_table_path=calibration_table, save_engine=True)
     assert engine_fixed, 'Broken engine_fixed'
     print('*** onnx to tensorrt completed ***\n')
 
-#--------------------inference------------------
+    # --------------------inference------------------
     # Input,picture
     img = cv2.imread(opt.img_path)
     img = letterbox(img, 640, stride=1)[0]
@@ -191,7 +198,7 @@ def main():
     if img.ndimension() == 3:
         img = img.unsqueeze(0)
 
-    #do tensorrt inference
+    # do tensorrt inference
     context = engine_fixed.create_execution_context()
     inputs, outputs, bindings, stream = allocate_buffers(engine_fixed)
     shape_of_output = (BATCH_SIZE, 3, 80, 60, 85)
@@ -200,19 +207,18 @@ def main():
     trt_outputs = do_inference(context, bindings=bindings, inputs=inputs, outputs=outputs, stream=stream)  # numpy data
     t2 = time.time()
     feat = postprocess_the_outputs(trt_outputs[0], shape_of_output)
-    #print('trt_outputs[0]:',trt_outputs[0].size)
-    #print(feat[0][0][0][0])
+    # print('trt_outputs[0]:',trt_outputs[0].size)
+    # print(feat[0][0][0][0])
 
-
-    #do onnx inference
+    # do onnx inference
     ort_session = onnxruntime.InferenceSession(opt.onnx_model_path)
     # compute ONNX Runtime output prediction
     ort_inputs = {ort_session.get_inputs()[0].name: to_numpy(img)}
     t3 = time.time()
     ort_outs = ort_session.run(None, ort_inputs)
     t4 = time.time()
-    #print('ort_outs.shape:',ort_outs.size)
-    #print(ort_outs[0][0][0][0][0])
+    # print('ort_outs.shape:',ort_outs.size)
+    # print(ort_outs[0][0][0][0][0])
     mse = np.sqrt(np.mean((feat[0] - ort_outs[0]) ** 2))
     print("Inference time with the TensorRT engine: {}".format(t2 - t1))
     print("Inference time with the ONNX      model: {}".format(t4 - t3))
@@ -221,12 +227,11 @@ def main():
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--quantize', type=str, default='fp32', help='int8,fp16,fp32') 
+    parser.add_argument('--quantize', type=str, default='fp32', help='int8,fp16,fp32')
     parser.add_argument('--engine_model_path', type=str, default='model_save/yolov5s.trt', help='model.trt path(s)')
-    parser.add_argument('--img_path', type=str, default='test_image/bus.jpg', help='source') 
+    parser.add_argument('--img_path', type=str, default='test_image/bus.jpg', help='source')
     parser.add_argument('--onnx_model_path', type=str, default='model_save/yolov5s.trt', help='model.onnx path(s)')
     parser.add_argument('--img-size', type=int, default=640, help='inference size (pixels)')
     opt = parser.parse_args()
     print(opt)
     main()
-
