@@ -182,7 +182,7 @@ yolov5s_int8.trt
 
 <img src="./doc/int8_detect.png" alt="int8_detect" style="zoom:80%;" />
 
-yolov5s_int8.trt
+yolov5s_mix.trt
 
 <img src="./doc/int4_detect.png" alt="int4_detect" style="zoom:80%;" />
 
