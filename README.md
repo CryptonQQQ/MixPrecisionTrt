@@ -2,7 +2,7 @@
 
 
 
-## 一·环境搭建
+## 一· 环境搭建
 
 环境：ubuntu：18.04
 
@@ -18,7 +18,7 @@ python3.8（使用其他版本可能会出现问题）
 
 Conda
 
-## 二.准备训练好的pytorch-yolov5模型,保存到model_save目录下       
+## 二. 准备训练好的pytorch-yolov5模型,保存到model_save目录下       
 
 ```
 git clone https://github.com.cnpmjs.org/ultralytics/yolov5.git #下载yolov5
@@ -28,13 +28,13 @@ git clone https://github.com.cnpmjs.org/ultralytics/yolov5.git #下载yolov5
 
 
 
-## 三.导出export.py                                
+## 三. 导出export.py                                
 
-### 3.1加载测试图片img，test_image/bus.jpg
+### 3.1 加载测试图片img，test_image/bus.jpg
 
 --img_path test_image/bus.jpg
 
-### 3.2使用torch.onnx.export导出yolov5s.onnx
+### 3.2 使用torch.onnx.export导出yolov5s.onnx
 
 ​    onnx模型保存到pt模型的同一目录下，可以使用netron工具，查看图形化onnx模型
 
@@ -47,7 +47,7 @@ python netron_yolov5s.py                      #即可查看模型输出名
 
 
 
-### 3.3使用yolov5s.pt计算预测
+### 3.3 使用yolov5s.pt计算预测
 
  --weights
 
@@ -55,7 +55,7 @@ python netron_yolov5s.py                      #即可查看模型输出名
 y=model(img) 
 ```
 
-### 3.4使用ONNX Runtime计算预测
+### 3.4 使用ONNX Runtime计算预测
 
 ```
 ort_session = onnxruntime.InferenceSession(f)
@@ -64,14 +64,14 @@ ort_outs = ort_session.run(None, ort_inputs)
 
 
 
-### 3.5比较精度，计算mse
+### 3.5 比较精度，计算mse
 
 ```
 np.testing.assert_allclose(to_numpy(y[1][0]), ort_outs[0], rtol=1e-03, atol=1e-05)
 mse = np.sqrt(np.mean((to_numpy(y[1][0]) - ort_outs[0]) ** 2))
 ```
 
-### 3.6结果
+### 3.6 结果
 
 <img src="./doc/3.6res.png" alt="image-20210430100723048" style="zoom:80%;" />
 
@@ -81,7 +81,7 @@ mse = np.sqrt(np.mean((to_numpy(y[1][0]) - ort_outs[0]) ** 2))
 `python export.py --weights  model_save/yolov5s.pt --img_path test_image/bus.jpg --img-size 640 --batch-size 1`
 ```
 
-##   四.生成tensorrt engine，精度转换                           
+##   四. 生成tensorrt engine，精度转换                           
 
 tensorrt_engine.py
 
@@ -89,7 +89,7 @@ util_trt_modify.py
 
 calibrator.py
 
-### 4.1准备COCO数据集,onnx模型，测试图片，engine保存位置
+### 4.1 准备COCO数据集,onnx模型，测试图片，engine保存位置
 
 CALIB_IMG_DIR = 'coco/images/train2017'
 
@@ -99,15 +99,15 @@ CALIB_IMG_DIR = 'coco/images/train2017'
 
 --engine_model_path = "model_save/yolov5s.trt"
 
-###   4.2确定精度
+###   4.2 确定精度
 
 --quantize fp32/fp16/int8/int4
 
-###   4.3使用engine预测
+###   4.3 使用engine预测
 
 `outputs = do_inference(context, bindings=bindings, inputs=inputs, outputs=outputs, stream=stream)`
 
-### 4.4比较精度，计算mse
+### 4.4 比较精度，计算mse
 
 ```
 mse = np.sqrt(np.mean((feat[0] - ort_outs[0]) ** 2))
@@ -171,9 +171,11 @@ yolov5s_fp16.trt
 <img src="./doc/fp16_detect.png" alt="fp16_detect" style="zoom:80%;" />
 
 yolov5s_int8.trt
+
 <img src="./doc/int8_detect.png" alt="int8_detect" style="zoom:80%;" />
 
 yolov5s_int8.trt
+
 <img src="./doc/int4_detect.png" alt="int4_detect" style="zoom:80%;" />
 
 ### 示例
