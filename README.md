@@ -73,7 +73,7 @@ mse = np.sqrt(np.mean((to_numpy(y[1][0]) - ort_outs[0]) ** 2))
 
 ### 3.6结果
 
-<img src="./doc/fp16.png" alt="image-20210430100723048" style="zoom:80%;" />
+<img src="./doc/3.6res.png" alt="image-20210430100723048" style="zoom:80%;" />
 
 ### 示例
 
@@ -117,31 +117,22 @@ mse = np.sqrt(np.mean((feat[0] - ort_outs[0]) ** 2))
 
 fp32
 
-<img src="C:\Users\user\AppData\Roaming\Typora\typora-user-images\image-20210430104502387.png" alt="image-20210430104502387" style="zoom:80%;" />
+<img src="./doc/fp32.png" alt="fp32.png" style="zoom:80%;" />
 
 
-
-fp32 modify
-
-<img src="C:\Users\user\AppData\Roaming\Typora\typora-user-images\image-20210430101038644.png" alt="image-20210430101038644" style="zoom:80%;" />
 
 fp16
 
-<img src="C:\Users\user\AppData\Roaming\Typora\typora-user-images\image-20210430105954134.png" alt="image-20210430105954134" style="zoom:80%;" />
+<img src="./doc/fp16.png" alt="fp16.png" style="zoom:80%;" />
 
-
-
-fp16 modify
-
-<img src="C:\Users\user\AppData\Roaming\Typora\typora-user-images\image-20210430102213229.png" alt="image-20210430102213229" style="zoom:80%;" />
 
 int8
 
-<img src="C:\Users\user\AppData\Roaming\Typora\typora-user-images\image-20210430110342714.png" alt="image-20210430110342714" style="zoom:80%;" />
+<img src="./doc/int8.png" alt="int8" style="zoom:80%;" />
 
 int4
 
-<img src="C:\Users\user\AppData\Roaming\Typora\typora-user-images\image-20210430102821459.png" alt="image-20210430102821459" style="zoom:80%;" />
+<img src="./doc/Ours.png" alt="Ours" style="zoom:80%;" />
 
 
 
@@ -173,15 +164,17 @@ detect.py
 
 yolov5s.trt
 
-![image-20210430111200036](C:\Users\user\AppData\Roaming\Typora\typora-user-images\image-20210430111200036.png)
+<img src="./doc/fp32_detect.png" alt="fp32_detect" style="zoom:80%;" />
 
 yolov5s_fp16.trt
 
-<img src="C:\Users\user\AppData\Roaming\Typora\typora-user-images\image-20210430112108415.png" alt="image-20210430112108415" style="zoom:80%;" />
+<img src="./doc/fp16_detect.png" alt="fp16_detect" style="zoom:80%;" />
 
 yolov5s_int8.trt
+<img src="./doc/int8_detect.png" alt="int8_detect" style="zoom:80%;" />
 
-
+yolov5s_int8.trt
+<img src="./doc/int4_detect.png" alt="int4_detect" style="zoom:80%;" />
 
 ### 示例
 
