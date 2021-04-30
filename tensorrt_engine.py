@@ -146,7 +146,8 @@ class DataLoader:
 
 
 def main():
-    
+    strategy=[4]*62
+    print('strategy:',strategy)
     # onnx2trt
     fp16_mode = False
     int8_mode = False
@@ -170,7 +171,7 @@ def main():
     if int4_mode:
       engine_fixed = util_trt_modify.get_engine(BATCH_SIZE, onnx_file_path=opt.onnx_model_path, engine_file_path=opt.engine_model_path, fp32_mode=fp32_mode, fp16_mode=fp16_mode,
                                               int4_mode=int4_mode, calibration_stream=calibration_stream,
-                                              calibration_table_path=calibration_table, save_engine=True)
+                                              calibration_table_path=calibration_table, save_engine=True,strategy=strategy)
     else:
       engine_fixed = util_trt.get_engine(BATCH_SIZE, onnx_file_path=opt.onnx_model_path, engine_file_path=opt.engine_model_path, fp32_mode=fp32_mode, fp16_mode=fp16_mode,
                                               int8_mode=int8_mode, calibration_stream=calibration_stream,

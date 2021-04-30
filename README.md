@@ -73,7 +73,7 @@ mse = np.sqrt(np.mean((to_numpy(y[1][0]) - ort_outs[0]) ** 2))
 
 ### 3.6结果
 
-<img src="C:\Users\user\AppData\Roaming\Typora\typora-user-images\image-20210430100723048.png" alt="image-20210430100723048" style="zoom:80%;" />
+<img src="./doc/fp16.png" alt="image-20210430100723048" style="zoom:80%;" />
 
 ### 示例
 
