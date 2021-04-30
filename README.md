@@ -57,7 +57,6 @@ python netron_yolov5s.py                      #即可查看模型输出名
 
 ### 3.3 使用yolov5s.pt计算预测
 
- --weights
 
 ```
 y=model(img) 
