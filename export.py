@@ -14,7 +14,7 @@ import onnxruntime
 
 #sys.path.append('./')
 sys.path.append('./yolov5/')# to run '$ python *.py' files in subdirectories
-
+import Logger
 import torch
 import torch.nn as nn
 from models import experimental
@@ -74,8 +74,8 @@ if __name__ == '__main__':
     parser.add_argument('--cfg', type=str, default='', help='model.yaml path')
     opt = parser.parse_args()
     opt.img_size *= 2 if len(opt.img_size) == 1 else 1  # expand
-    log = Logger('{}/results/lfp.log'.format(self.save_dir), 'info')
-    print(opt)
+    log = Logger.Logger('export.log', 'info')
+    log.logger.info(opt)
     general.set_logging()
     t = time.time()
 

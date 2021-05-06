@@ -6,10 +6,17 @@ technical concepts contained herein are proprietary to Nunova, Inc. and may be c
 patents in process, and are protected by trade secret or copyright law. Dissemination of this information or
 reproduction of this material is strictly forbidden unless prior written permission is obtained from Nunova, Inc.
 """
-
+import os
 import logging
 from logging import handlers
 
+#make sure the exist of filepath
+def mkdir(path):
+    if not os.path.exists(path):
+        os.system(r"touch {}".format(path))  # 调用系统命令行来创建文件
+        logging.info("'{}'file path did not exits and has been created successfully.".format(path))
+    else:
+        logging.info("'{}' exits and loads successfully.".format(path))
 
 class Logger:
     """
@@ -26,6 +33,7 @@ class Logger:
 
     def __init__(self, filename, level='debug', when='D', back_cnt=3, fmt='%(asctime)s - %(pathname)s[line:%(lineno)d]'
                                                                           ' - %(levelname)s: %(message)s'):
+        mkdir(filename)
         self.logger = logging.getLogger(filename)
         self.logger.setLevel(self.log_level.get(level))
         format_str = logging.Formatter(fmt)
