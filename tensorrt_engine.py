@@ -10,7 +10,7 @@ import onnxruntime
 import pycuda.driver as cuda
 import tensorrt as trt
 import torch
-
+import Logger
 import util_trt
 import util_trt_modify
 from export import letterbox, to_numpy
@@ -19,8 +19,6 @@ BATCH_SIZE = 1
 BATCH = 100
 height = 640
 width = 480
-
-CALIB_IMG_DIR = 'coco/images/train2017'
 
 
 def allocate_buffers(engine):
@@ -77,9 +75,8 @@ def preprocess_v1(image_raw):
         image, ty1, ty2, tx1, tx2, cv2.BORDER_CONSTANT, (128, 128, 128)
     )
     image = image.astype(np.float32)
-    # Normalize to [0,1]
     image /= 255.0
-    # HWC to CHW format:
+    # HWC to CHW format
     image = np.transpose(image, [2, 0, 1])
     # CHW to NCHW format
     # image = np.expand_dims(image, axis=0)
@@ -118,10 +115,10 @@ class DataLoader:
         self.length = BATCH
         self.batch_size = BATCH_SIZE
         # self.img_list = [i.strip() for i in open('calib.txt').readlines()]
-        self.img_list = glob.glob(os.path.join(CALIB_IMG_DIR, "*.jpg"))
+        self.img_list = glob.glob(os.path.join(opt.CALIB_IMG_DIR, "*.jpg"))
         assert len(self.img_list) > self.batch_size * self.length, '{} must contains more than '.format(
-            CALIB_IMG_DIR) + str(self.batch_size * self.length) + ' images to calib'
-        print('found all {} images to calib.'.format(len(self.img_list)))
+            opt.CALIB_IMG_DIR) + str(self.batch_size * self.length) + ' images to calib'
+        log.logger.info('found all {} images to calib.'.format(len(self.img_list)))
         self.calibration_data = np.zeros((self.batch_size, 3, height, width), dtype=np.float32)
 
     def reset(self):
@@ -149,14 +146,14 @@ class DataLoader:
 def main():
     strategy = [4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 4, 8, 4, 4, 8, 4, 4, 8, 4, 4, 8, 4, 4, 4, 8, 8, 4, 4, 4, 8, 4, 8, 4, 4, 4,
                 4, 8, 4, 6, 4, 8, 4, 4, 8, 6, 4, 4, 8, 4, 8, 8, 6, 4, 4, 8, 4, 4, 8, 4, 8, 4, 4]
-    print('strategy:', strategy)
+
     # onnx2trt
     fp16_mode = False
     int8_mode = False
     fp32_mode = False
-    int4_mode = False
-    if opt.quantize == 'int4':
-        int4_mode = True
+    mix_mode = False
+    if opt.quantize == 'mix':
+        mix_mode = True
     if opt.quantize == 'int8':
         int8_mode = True
     elif opt.quantize == 'fp16':
@@ -164,25 +161,24 @@ def main():
     elif opt.quantize == 'fp32':
         fp32_mode = True
     else:
-        print('please set appropriate mode for quantification.(--quantize fp32)')
+        log.logger.error('please set appropriate mode for quantification.(--quantize fp32)')
 
-    print('*** onnx to tensorrt begin ***')
+    log.logger.info('*** onnx to tensorrt begin ***')
     # calibration
     calibration_stream = DataLoader()
-    calibration_table = 'model_save/yolov5s_calibration.cache'
-    if int4_mode:
+    if mix_mode:
         engine_fixed = util_trt_modify.get_engine(BATCH_SIZE, onnx_file_path=opt.onnx_model_path,
                                                   engine_file_path=opt.engine_model_path, fp32_mode=fp32_mode,
                                                   fp16_mode=fp16_mode,
-                                                  int4_mode=int4_mode, calibration_stream=calibration_stream,
-                                                  calibration_table_path=calibration_table, save_engine=True,
-                                                  strategy=strategy)
+                                                  mix_mode=mix_mode, calibration_stream=calibration_stream,
+                                                  calibration_table_path=opt.calibration_table, save_engine=True,
+                                                  strategy=strategy,log=log)
     else:
         engine_fixed = util_trt.get_engine(BATCH_SIZE, onnx_file_path=opt.onnx_model_path,
                                            engine_file_path=opt.engine_model_path, fp32_mode=fp32_mode,
                                            fp16_mode=fp16_mode,
                                            int8_mode=int8_mode, calibration_stream=calibration_stream,
-                                           calibration_table_path=calibration_table, save_engine=True)
+                                           calibration_table_path=opt.calibration_table, save_engine=True)
     assert engine_fixed, 'Broken engine_fixed'
     print('*** onnx to tensorrt completed ***\n')
 
@@ -207,8 +203,7 @@ def main():
     trt_outputs = do_inference(context, bindings=bindings, inputs=inputs, outputs=outputs, stream=stream)  # numpy data
     t2 = time.time()
     feat = postprocess_the_outputs(trt_outputs[0], shape_of_output)
-    # print('trt_outputs[0]:',trt_outputs[0].size)
-    # print(feat[0][0][0][0])
+
 
     # do onnx inference
     ort_session = onnxruntime.InferenceSession(opt.onnx_model_path)
@@ -217,21 +212,23 @@ def main():
     t3 = time.time()
     ort_outs = ort_session.run(None, ort_inputs)
     t4 = time.time()
-    # print('ort_outs.shape:',ort_outs.size)
-    # print(ort_outs[0][0][0][0][0])
+
     mse = np.sqrt(np.mean((feat[0] - ort_outs[0]) ** 2))
-    print("Inference time with the TensorRT engine: {}".format(t2 - t1))
-    print("Inference time with the ONNX      model: {}".format(t4 - t3))
-    print('MSE Error = {}'.format(mse))
+    log.logger.info("Inference time with the TensorRT engine: {}".format(t2 - t1))
+    log.logger.info("Inference time with the ONNX      model: {}".format(t4 - t3))
+    log.logger.info('MSE Error = {}'.format(mse))
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--quantize', type=str, default='fp32', help='int8,fp16,fp32')
+    parser.add_argument('--quantize', type=str, default='fp32', help='mix,int8,fp16,fp32')
     parser.add_argument('--engine_model_path', type=str, default='model_save/yolov5s.trt', help='model.trt path(s)')
     parser.add_argument('--img_path', type=str, default='test_image/bus.jpg', help='source')
     parser.add_argument('--onnx_model_path', type=str, default='model_save/yolov5s.trt', help='model.onnx path(s)')
     parser.add_argument('--img-size', type=int, default=640, help='inference size (pixels)')
+    parser.add_argument('--CALIB_IMG_DIR', type=str, default='coco/images/train2017', help='coco images path(s)')
+    parser.add_argument('--calibration_table', type=str, default='model_save/yolov5s_calibration.cache', help='yolov5s_calibration path(s)')
     opt = parser.parse_args()
-    print(opt)
+    log = Logger.Logger('tensorrt_engine.log', 'info')
+    log.logger.info(opt)
     main()

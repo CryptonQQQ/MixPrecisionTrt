@@ -98,6 +98,7 @@ if __name__ == '__main__':
     img /= 255.0  # 0 - 255 to 0.0 - 1.0
     if img.ndimension() == 3:  # add a dim in dim0
         img = img.unsqueeze(0)
+
     # Update model
     for k, m in model.named_modules():
         m._non_persistent_buffers_set = set()  # pytorch 1.6.0 compatibility
@@ -106,8 +107,7 @@ if __name__ == '__main__':
                 m.act = activations.Hardswish()
             elif isinstance(m.act, nn.SiLU):
                 m.act = activations.SiLU()
-        # elif isinstance(m, models.yolo.Detect):
-        #     m.forward = m.forward_export  # assign forward (optional)
+
 
     t1 = time.time()
     y = model(img)  # dry run
@@ -116,8 +116,7 @@ if __name__ == '__main__':
 
     try:
         import onnx
-
-        print('\nStarting ONNX export with onnx %s...' % onnx.__version__)
+        log.logger.info('\nStarting ONNX export with onnx %s...' % onnx.__version__)
         f = opt.weights.replace('.pt', '.onnx')  # filename
         torch.onnx.export(model, img, f, verbose=True, opset_version=11, input_names=['images'],
                           output_names=['classes', 'boxes'] if y is None else ['output'],
@@ -127,9 +126,9 @@ if __name__ == '__main__':
         # Checks
         onnx_model = onnx.load(f)  # load onnx model
         onnx.checker.check_model(onnx_model)  # check onnx model
-        print('ONNX export success, saved as %s' % f)
+        log.logger.info('ONNX export success, saved as %s' % f)
     except Exception as e:
-        print('ONNX export failure: %s' % e)
+        log.logger.error('ONNX export failure: %s' % e)
 
     # compute ONNX Runtime output prediction
     ort_session = onnxruntime.InferenceSession(f)
@@ -139,11 +138,9 @@ if __name__ == '__main__':
     t4 = time.time()
     # compare ONNX Runtime and PyTorch results
 
-    # print(to_numpy(y[1][0][0][0][0][0]))
-    # print(ort_outs[0][0][0][0][0])
     np.testing.assert_allclose(to_numpy(y[1][0]), ort_outs[0], rtol=1e-03, atol=1e-05)
     mse = np.sqrt(np.mean((to_numpy(y[1][0]) - ort_outs[0]) ** 2))
-    print("Inference time with the PyTorch model: {}".format(t2 - t1))
-    print("Inference time with the ONNX    model: {}".format(t4 - t3))
-    print('MSE Error = {}'.format(mse))
-    print("Exported model has been tested with ONNXRuntime, and the result looks good!")
+    log.logger.info("Inference time with the PyTorch model: {}".format(t2 - t1))
+    log.logger.info("Inference time with the ONNX    model: {}".format(t4 - t3))
+    log.logger.info('MSE Error = {}'.format(mse))
+    log.logger.info("Exported model has been tested with ONNXRuntime, and the result looks good!")
