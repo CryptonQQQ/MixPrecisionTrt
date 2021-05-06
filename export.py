@@ -12,19 +12,18 @@ import cv2
 import numpy as np
 import onnxruntime
 
-sys.path.append('./')
+#sys.path.append('./')
 sys.path.append('./yolov5/')# to run '$ python *.py' files in subdirectories
 
 import torch
 import torch.nn as nn
-
 from models import experimental
 from models import common
 from utils import torch_utils
 from utils import general
 from utils import activations
 
-
+#preprocessing pictrue and add box to pictrue
 def letterbox(img, new_shape=(640, 640), color=(114, 114, 114), auto=True, scaleFill=False, scaleup=True, stride=32):
     # Resize and pad image while meeting stride-multiple constraints
     shape = img.shape[:2]  # current shape [height, width]
@@ -57,7 +56,7 @@ def letterbox(img, new_shape=(640, 640), color=(114, 114, 114), auto=True, scale
     img = cv2.copyMakeBorder(img, top, bottom, left, right, cv2.BORDER_CONSTANT, value=color)  # add border
     return img, ratio, (dw, dh)
 
-
+#change tensor to numpy
 def to_numpy(tensor):
     return tensor.detach().cpu().numpy() if tensor.requires_grad else tensor.cpu().numpy()
 
@@ -65,7 +64,7 @@ def to_numpy(tensor):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--weights', type=str, default='model_save/yolov5s.pt', help='weights path')
-    parser.add_argument('--img_path', type=str, default='test_image/bus.jpg', help='source')
+    parser.add_argument('--img-path', type=str, default='test_image/bus.jpg', help='source')
     parser.add_argument('--img-size', nargs='+', type=int, default=[640, 640], help='image size')  # height, width
     parser.add_argument('--batch-size', type=int, default=24, help='batch size')
     parser.add_argument('--dynamic', action='store_true', help='dynamic ONNX axes')
@@ -75,6 +74,7 @@ if __name__ == '__main__':
     parser.add_argument('--cfg', type=str, default='', help='model.yaml path')
     opt = parser.parse_args()
     opt.img_size *= 2 if len(opt.img_size) == 1 else 1  # expand
+    log = Logger('{}/results/lfp.log'.format(self.save_dir), 'info')
     print(opt)
     general.set_logging()
     t = time.time()
