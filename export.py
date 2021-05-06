@@ -12,8 +12,8 @@ import cv2
 import numpy as np
 import onnxruntime
 
-sys.path.append('./')  # to run '$ python *.py' files in subdirectories
-sys.path.append('./yolov5/')
+sys.path.append('./')
+sys.path.append('./yolov5/')# to run '$ python *.py' files in subdirectories
 
 import torch
 import torch.nn as nn
