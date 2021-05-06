@@ -137,7 +137,7 @@ int8
 
 <img src="./doc/int8.png" alt="int8" style="zoom:80%;" />
 
-int4
+mix
 
 <img src="./doc/Ours.png" alt="Ours" style="zoom:80%;" />
 
