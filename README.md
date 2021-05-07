@@ -8,21 +8,12 @@
 ├── detect.py
 ├── doc
 │   ├── 3.6res.png
-│   ├── fp16_detect.png
-│   ├── fp16.png
-│   ├── fp32_detect.png
-│   ├── fp32.png
-│   ├── int4_detect.png
-│   ├── int8_detect.png
-│   ├── int8.png
-│   ├── Ours.png
-│   └── v5sfp16.png
+│   ├── ...
 ├── export.py
 ├── LICENSE
 ├── Logger.py
 ├── model_save
 │   └── yolov5s_calibration.cache
-├── netron_yolov5s.py
 ├── README.md
 ├── tensorrt_engine.py
 ├── test_image
@@ -77,15 +68,6 @@ strategy = [4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 4, 8, 4, 4, 8, 4, 4, 8, 4, 4, 8, 4, 4,
 ### 3.2 使用torch.onnx.export导出yolov5s.onnx
 
 ​    onnx模型保存到pt模型的同一目录下，可以使用netron工具，查看图形化onnx模型
-
-
-#在netron_yolov5s.py中修改
-```
-netron.start('此处填充简化后的onnx模型路径')
-python netron_yolov5s.py                      #即可查看模型输出名
-```
-
-
 
 ### 3.3 使用yolov5s.pt计算预测
 
