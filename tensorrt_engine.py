@@ -25,7 +25,7 @@ BATCH = 100
 height = 640
 width = 480
 
-
+#calculate on GPU about the Specifications,such as the shape of input
 def allocate_buffers(engine):
     inputs, outputs, bindings = [], [], []
     stream = cuda.Stream()
@@ -41,7 +41,7 @@ def allocate_buffers(engine):
             outputs.append(HostDeviceMem(host_mem, device_mem))
     return inputs, outputs, bindings, stream
 
-
+#calculate on GPU about making inference
 def do_inference(context, bindings, inputs, outputs, stream, batch_size=1):
     [cuda.memcpy_htod_async(inp.device, inp.host, stream) for inp in inputs]
     context.execute_async_v2(bindings=bindings, stream_handle=stream.handle)
@@ -54,7 +54,7 @@ def postprocess_the_outputs(h_outputs, shape_of_output):
     h_outputs = h_outputs.reshape(*shape_of_output)
     return h_outputs
 
-
+#preprecross the images for inference
 def preprocess_v1(image_raw):
     h, w, c = image_raw.shape
     image = cv2.cvtColor(image_raw, cv2.COLOR_BGR2RGB)
@@ -113,7 +113,7 @@ class HostDeviceMem(object):
     def __repr__(self):
         return self.__str__()
 
-
+#preprecross the images for generating the engine
 class DataLoader:
     def __init__(self):
         self.index = 0

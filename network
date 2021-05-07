@@ -1,0 +1,994 @@
+2021-05-07 08:25:39,155 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:265  .the number of the conv is:1
+
+2021-05-07 08:25:39,155 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_41
+
+2021-05-07 08:25:39,155 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,155 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_9 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,155 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_42
+
+2021-05-07 08:25:39,155 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,155 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_43
+
+2021-05-07 08:25:39,155 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,156 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:266  .the number of the conv is:2
+
+2021-05-07 08:25:39,156 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_44
+
+2021-05-07 08:25:39,156 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,156 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_12 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,156 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_45
+
+2021-05-07 08:25:39,156 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,156 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_46
+
+2021-05-07 08:25:39,156 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,156 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:267  .the number of the conv is:3
+
+2021-05-07 08:25:39,156 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_47
+
+2021-05-07 08:25:39,156 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,156 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_15 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,156 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_48
+
+2021-05-07 08:25:39,156 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,156 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_49
+
+2021-05-07 08:25:39,156 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,156 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:268  .the number of the conv is:4
+
+2021-05-07 08:25:39,156 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_50
+
+2021-05-07 08:25:39,156 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,156 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_18 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,156 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_51
+
+2021-05-07 08:25:39,156 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,157 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_52
+
+2021-05-07 08:25:39,157 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,157 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:269  .the number of the conv is:5
+
+2021-05-07 08:25:39,157 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_53
+
+2021-05-07 08:25:39,157 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,157 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_21 beta is 127.0 and alpha is -128.0
+
+2021-05-07 08:25:39,157 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_54
+
+2021-05-07 08:25:39,157 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,157 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_55
+
+2021-05-07 08:25:39,157 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,157 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:270  .the number of the conv is:6
+
+2021-05-07 08:25:39,157 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_57
+
+2021-05-07 08:25:39,157 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,157 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_25 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,157 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_58
+
+2021-05-07 08:25:39,157 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,157 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_59
+
+2021-05-07 08:25:39,157 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,157 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:271  .the number of the conv is:7
+
+2021-05-07 08:25:39,157 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_61
+
+2021-05-07 08:25:39,157 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,157 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_29 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,158 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_62
+
+2021-05-07 08:25:39,158 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,158 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_63
+
+2021-05-07 08:25:39,158 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,158 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:272  .the number of the conv is:8
+
+2021-05-07 08:25:39,158 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_64
+
+2021-05-07 08:25:39,158 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,158 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_32 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,158 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_65
+
+2021-05-07 08:25:39,158 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,158 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_66
+
+2021-05-07 08:25:39,158 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,158 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:273  .the number of the conv is:9
+
+2021-05-07 08:25:39,158 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_67
+
+2021-05-07 08:25:39,158 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,158 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_35 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,158 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_68
+
+2021-05-07 08:25:39,158 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,158 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_69
+
+2021-05-07 08:25:39,158 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,158 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:274  .the number of the conv is:10
+
+2021-05-07 08:25:39,158 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_70
+
+2021-05-07 08:25:39,159 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,159 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_38 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,159 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_71
+
+2021-05-07 08:25:39,159 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,159 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_72
+
+2021-05-07 08:25:39,159 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,159 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:275  .the number of the conv is:11
+
+2021-05-07 08:25:39,159 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_73
+
+2021-05-07 08:25:39,159 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,159 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_41 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,159 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_74
+
+2021-05-07 08:25:39,159 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,159 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_75
+
+2021-05-07 08:25:39,159 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,159 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:276  .the number of the conv is:12
+
+2021-05-07 08:25:39,159 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_77
+
+2021-05-07 08:25:39,159 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,159 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_45 beta is 127.0 and alpha is -128.0
+
+2021-05-07 08:25:39,159 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_78
+
+2021-05-07 08:25:39,159 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,159 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_79
+
+2021-05-07 08:25:39,159 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,160 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:277  .the number of the conv is:13
+
+2021-05-07 08:25:39,160 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_80
+
+2021-05-07 08:25:39,160 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,160 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_48 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,160 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_81
+
+2021-05-07 08:25:39,160 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,160 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_82
+
+2021-05-07 08:25:39,160 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,160 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:278  .the number of the conv is:14
+
+2021-05-07 08:25:39,160 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_84
+
+2021-05-07 08:25:39,160 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,160 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_52 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,160 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_85
+
+2021-05-07 08:25:39,160 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,160 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_86
+
+2021-05-07 08:25:39,160 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,160 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:279  .the number of the conv is:15
+
+2021-05-07 08:25:39,161 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_87
+
+2021-05-07 08:25:39,161 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,161 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_55 beta is 127.0 and alpha is -128.0
+
+2021-05-07 08:25:39,161 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_88
+
+2021-05-07 08:25:39,161 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,161 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_89
+
+2021-05-07 08:25:39,161 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,161 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:280  .the number of the conv is:16
+
+2021-05-07 08:25:39,161 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_91
+
+2021-05-07 08:25:39,161 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,161 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_59 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,161 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_92
+
+2021-05-07 08:25:39,161 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,161 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_93
+
+2021-05-07 08:25:39,161 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,161 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:281  .the number of the conv is:17
+
+2021-05-07 08:25:39,161 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_95
+
+2021-05-07 08:25:39,162 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,162 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_63 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,162 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_96
+
+2021-05-07 08:25:39,162 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,162 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_97
+
+2021-05-07 08:25:39,162 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,162 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:282  .the number of the conv is:18
+
+2021-05-07 08:25:39,162 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_98
+
+2021-05-07 08:25:39,162 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,162 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_66 beta is 127.0 and alpha is -128.0
+
+2021-05-07 08:25:39,162 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_99
+
+2021-05-07 08:25:39,162 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,162 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_100
+
+2021-05-07 08:25:39,162 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,162 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:283  .the number of the conv is:19
+
+2021-05-07 08:25:39,162 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_101
+
+2021-05-07 08:25:39,162 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,162 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_69 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,163 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_102
+
+2021-05-07 08:25:39,163 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,163 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_103
+
+2021-05-07 08:25:39,163 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,163 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:284  .the number of the conv is:20
+
+2021-05-07 08:25:39,163 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_104
+
+2021-05-07 08:25:39,163 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,163 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_72 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,163 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_105
+
+2021-05-07 08:25:39,163 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,163 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_106
+
+2021-05-07 08:25:39,163 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,163 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:285  .the number of the conv is:21
+
+2021-05-07 08:25:39,163 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_107
+
+2021-05-07 08:25:39,163 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,163 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_75 beta is 127.0 and alpha is -128.0
+
+2021-05-07 08:25:39,163 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_108
+
+2021-05-07 08:25:39,163 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,163 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_109
+
+2021-05-07 08:25:39,163 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,163 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:286  .the number of the conv is:22
+
+2021-05-07 08:25:39,164 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_111
+
+2021-05-07 08:25:39,164 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,164 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_79 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,164 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_112
+
+2021-05-07 08:25:39,164 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,164 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_113
+
+2021-05-07 08:25:39,164 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,164 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:287  .the number of the conv is:23
+
+2021-05-07 08:25:39,164 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_114
+
+2021-05-07 08:25:39,164 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,164 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_82 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,164 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_115
+
+2021-05-07 08:25:39,164 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,164 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_116
+
+2021-05-07 08:25:39,164 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,164 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:288  .the number of the conv is:24
+
+2021-05-07 08:25:39,164 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_118
+
+2021-05-07 08:25:39,164 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,164 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_86 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,164 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_119
+
+2021-05-07 08:25:39,164 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,165 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_120
+
+2021-05-07 08:25:39,165 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,165 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:289  .the number of the conv is:25
+
+2021-05-07 08:25:39,165 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_121
+
+2021-05-07 08:25:39,165 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,165 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_89 beta is 127.0 and alpha is -128.0
+
+2021-05-07 08:25:39,165 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_122
+
+2021-05-07 08:25:39,165 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,165 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_123
+
+2021-05-07 08:25:39,165 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,165 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:290  .the number of the conv is:26
+
+2021-05-07 08:25:39,165 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_125
+
+2021-05-07 08:25:39,165 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,165 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_93 beta is 127.0 and alpha is -128.0
+
+2021-05-07 08:25:39,165 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_126
+
+2021-05-07 08:25:39,165 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,165 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_127
+
+2021-05-07 08:25:39,165 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,165 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:291  .the number of the conv is:27
+
+2021-05-07 08:25:39,165 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_129
+
+2021-05-07 08:25:39,165 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,165 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_97 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,165 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_130
+
+2021-05-07 08:25:39,166 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,166 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_131
+
+2021-05-07 08:25:39,166 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,166 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:292  .the number of the conv is:28
+
+2021-05-07 08:25:39,166 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_132
+
+2021-05-07 08:25:39,166 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,166 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_100 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,166 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_133
+
+2021-05-07 08:25:39,166 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,166 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_134
+
+2021-05-07 08:25:39,166 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,166 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:293  .the number of the conv is:29
+
+2021-05-07 08:25:39,166 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_135
+
+2021-05-07 08:25:39,166 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,166 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_103 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,166 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_136
+
+2021-05-07 08:25:39,166 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,166 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_137
+
+2021-05-07 08:25:39,166 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,166 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:294  .the number of the conv is:30
+
+2021-05-07 08:25:39,166 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_142
+
+2021-05-07 08:25:39,166 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,167 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_110 beta is 127.0 and alpha is -128.0
+
+2021-05-07 08:25:39,167 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_143
+
+2021-05-07 08:25:39,167 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,167 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_144
+
+2021-05-07 08:25:39,167 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,167 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:295  .the number of the conv is:31
+
+2021-05-07 08:25:39,167 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_145
+
+2021-05-07 08:25:39,167 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,167 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_113 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,167 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_146
+
+2021-05-07 08:25:39,167 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,167 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_147
+
+2021-05-07 08:25:39,167 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,167 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:296  .the number of the conv is:32
+
+2021-05-07 08:25:39,167 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_148
+
+2021-05-07 08:25:39,167 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,167 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_116 beta is 127.0 and alpha is -128.0
+
+2021-05-07 08:25:39,167 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_149
+
+2021-05-07 08:25:39,167 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,167 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_150
+
+2021-05-07 08:25:39,168 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,168 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:297  .the number of the conv is:33
+
+2021-05-07 08:25:39,168 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_151
+
+2021-05-07 08:25:39,168 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,168 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_119 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,168 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_152
+
+2021-05-07 08:25:39,168 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,168 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_153
+
+2021-05-07 08:25:39,168 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,168 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:298  .the number of the conv is:34
+
+2021-05-07 08:25:39,168 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_154
+
+2021-05-07 08:25:39,168 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,168 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_122 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,168 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_155
+
+2021-05-07 08:25:39,168 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,168 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_156
+
+2021-05-07 08:25:39,168 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,168 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:299  .the number of the conv is:35
+
+2021-05-07 08:25:39,169 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_158
+
+2021-05-07 08:25:39,169 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,169 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_126 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,169 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_159
+
+2021-05-07 08:25:39,169 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,169 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_160
+
+2021-05-07 08:25:39,169 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,169 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:300  .the number of the conv is:36
+
+2021-05-07 08:25:39,169 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_161
+
+2021-05-07 08:25:39,169 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,169 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_129 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,169 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_162
+
+2021-05-07 08:25:39,169 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,169 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_163
+
+2021-05-07 08:25:39,169 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,169 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:301  .the number of the conv is:37
+
+2021-05-07 08:25:39,169 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_167
+
+2021-05-07 08:25:39,169 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,170 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_134 beta is 127.0 and alpha is -128.0
+
+2021-05-07 08:25:39,170 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_168
+
+2021-05-07 08:25:39,170 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,170 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_169
+
+2021-05-07 08:25:39,170 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,170 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:302  .the number of the conv is:38
+
+2021-05-07 08:25:39,170 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_170
+
+2021-05-07 08:25:39,170 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,170 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_137 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,170 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_171
+
+2021-05-07 08:25:39,170 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,170 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_172
+
+2021-05-07 08:25:39,170 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,170 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:303  .the number of the conv is:39
+
+2021-05-07 08:25:39,170 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_173
+
+2021-05-07 08:25:39,170 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,170 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_140 beta is 31.0 and alpha is -32.0
+
+2021-05-07 08:25:39,171 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_174
+
+2021-05-07 08:25:39,171 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,171 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_175
+
+2021-05-07 08:25:39,171 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,171 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:304  .the number of the conv is:40
+
+2021-05-07 08:25:39,171 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_176
+
+2021-05-07 08:25:39,171 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,171 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_143 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,171 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_177
+
+2021-05-07 08:25:39,171 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,171 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_178
+
+2021-05-07 08:25:39,171 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,171 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:305  .the number of the conv is:41
+
+2021-05-07 08:25:39,171 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_180
+
+2021-05-07 08:25:39,171 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,171 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_147 beta is 127.0 and alpha is -128.0
+
+2021-05-07 08:25:39,171 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_181
+
+2021-05-07 08:25:39,171 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,172 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_182
+
+2021-05-07 08:25:39,172 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,172 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:306  .the number of the conv is:42
+
+2021-05-07 08:25:39,172 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_183
+
+2021-05-07 08:25:39,172 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,172 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_150 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,172 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_184
+
+2021-05-07 08:25:39,172 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,172 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_185
+
+2021-05-07 08:25:39,172 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,172 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:307  .the number of the conv is:43
+
+2021-05-07 08:25:39,172 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_189
+
+2021-05-07 08:25:39,172 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,172 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_155 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,172 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_190
+
+2021-05-07 08:25:39,172 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,172 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_191
+
+2021-05-07 08:25:39,173 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,173 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:308  .the number of the conv is:44
+
+2021-05-07 08:25:39,173 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_192
+
+2021-05-07 08:25:39,173 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,173 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_158 beta is 127.0 and alpha is -128.0
+
+2021-05-07 08:25:39,173 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_193
+
+2021-05-07 08:25:39,173 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,173 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_194
+
+2021-05-07 08:25:39,173 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,173 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:309  .the number of the conv is:45
+
+2021-05-07 08:25:39,173 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_195
+
+2021-05-07 08:25:39,173 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,173 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_161 beta is 31.0 and alpha is -32.0
+
+2021-05-07 08:25:39,173 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_196
+
+2021-05-07 08:25:39,173 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,173 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_197
+
+2021-05-07 08:25:39,173 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,173 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:310  .the number of the conv is:46
+
+2021-05-07 08:25:39,174 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_198
+
+2021-05-07 08:25:39,174 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,174 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_164 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,174 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_199
+
+2021-05-07 08:25:39,174 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,174 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_200
+
+2021-05-07 08:25:39,174 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,174 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:311  .the number of the conv is:47
+
+2021-05-07 08:25:39,174 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_202
+
+2021-05-07 08:25:39,174 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,174 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_168 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,174 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_203
+
+2021-05-07 08:25:39,174 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,174 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_204
+
+2021-05-07 08:25:39,174 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,174 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:312  .the number of the conv is:48
+
+2021-05-07 08:25:39,174 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_205
+
+2021-05-07 08:25:39,174 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,175 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_171 beta is 127.0 and alpha is -128.0
+
+2021-05-07 08:25:39,175 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_206
+
+2021-05-07 08:25:39,175 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,175 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_207
+
+2021-05-07 08:25:39,175 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,175 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:313  .the number of the conv is:49
+
+2021-05-07 08:25:39,175 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_209
+
+2021-05-07 08:25:39,175 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,175 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_175 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,175 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_210
+
+2021-05-07 08:25:39,175 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,175 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_211
+
+2021-05-07 08:25:39,175 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,176 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:314  .the number of the conv is:50
+
+2021-05-07 08:25:39,176 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_212
+
+2021-05-07 08:25:39,176 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,176 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_178 beta is 127.0 and alpha is -128.0
+
+2021-05-07 08:25:39,176 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_213
+
+2021-05-07 08:25:39,176 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,176 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_214
+
+2021-05-07 08:25:39,176 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,176 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:315  .the number of the conv is:51
+
+2021-05-07 08:25:39,176 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_215
+
+2021-05-07 08:25:39,176 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,176 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_181 beta is 127.0 and alpha is -128.0
+
+2021-05-07 08:25:39,176 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_216
+
+2021-05-07 08:25:39,176 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,176 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_217
+
+2021-05-07 08:25:39,176 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,176 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:316  .the number of the conv is:52
+
+2021-05-07 08:25:39,177 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_218
+
+2021-05-07 08:25:39,177 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,177 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_184 beta is 31.0 and alpha is -32.0
+
+2021-05-07 08:25:39,177 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_219
+
+2021-05-07 08:25:39,177 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,177 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_220
+
+2021-05-07 08:25:39,177 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,177 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:317  .the number of the conv is:53
+
+2021-05-07 08:25:39,177 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_222
+
+2021-05-07 08:25:39,177 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,177 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_188 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,177 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_223
+
+2021-05-07 08:25:39,177 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,177 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_224
+
+2021-05-07 08:25:39,177 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,177 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:318  .the number of the conv is:54
+
+2021-05-07 08:25:39,177 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_225
+
+2021-05-07 08:25:39,177 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,178 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_191 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,178 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_226
+
+2021-05-07 08:25:39,178 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,178 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_227
+
+2021-05-07 08:25:39,178 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,178 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:319  .the number of the conv is:55
+
+2021-05-07 08:25:39,178 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_229
+
+2021-05-07 08:25:39,178 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,178 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_195 beta is 127.0 and alpha is -128.0
+
+2021-05-07 08:25:39,178 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_230
+
+2021-05-07 08:25:39,178 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,178 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_231
+
+2021-05-07 08:25:39,178 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,178 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:320  .the number of the conv is:56
+
+2021-05-07 08:25:39,178 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_232
+
+2021-05-07 08:25:39,178 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,178 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_198 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,178 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_233
+
+2021-05-07 08:25:39,178 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,179 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_234
+
+2021-05-07 08:25:39,179 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,179 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:321  .the number of the conv is:57
+
+2021-05-07 08:25:39,179 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_235
+
+2021-05-07 08:25:39,179 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,179 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_201 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,179 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_236
+
+2021-05-07 08:25:39,179 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,179 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_237
+
+2021-05-07 08:25:39,179 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,179 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:322  .the number of the conv is:58
+
+2021-05-07 08:25:39,179 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_238
+
+2021-05-07 08:25:39,179 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,179 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_204 beta is 127.0 and alpha is -128.0
+
+2021-05-07 08:25:39,179 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_239
+
+2021-05-07 08:25:39,179 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,179 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_240
+
+2021-05-07 08:25:39,179 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,179 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:323  .the number of the conv is:59
+
+2021-05-07 08:25:39,180 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_242
+
+2021-05-07 08:25:39,180 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,180 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_208 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,180 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Sigmoid_243
+
+2021-05-07 08:25:39,180 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.ACTIVATION
+
+2021-05-07 08:25:39,180 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: Mul_244
+
+2021-05-07 08:25:39,180 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.ELEMENTWISE
+
+2021-05-07 08:25:39,180 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:324  .the number of the conv is:60
+
+2021-05-07 08:25:39,180 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_245
+
+2021-05-07 08:25:39,180 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,180 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_211 beta is 127.0 and alpha is -128.0
+
+2021-05-07 08:25:39,180 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Shape_246
+
+2021-05-07 08:25:39,180 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.SHAPE
+
+2021-05-07 08:25:39,180 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: 380
+
+2021-05-07 08:25:39,180 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.CONSTANT
+
+2021-05-07 08:25:39,180 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:325  .the number of the conv is:61
+
+2021-05-07 08:25:39,180 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_261
+
+2021-05-07 08:25:39,181 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,181 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_229 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,181 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Shape_262
+
+2021-05-07 08:25:39,181 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.SHAPE
+
+2021-05-07 08:25:39,181 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: 400
+
+2021-05-07 08:25:39,181 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.CONSTANT
+
+2021-05-07 08:25:39,181 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:47] - INFO: ----1----network.num_layers:326  .the number of the conv is:62
+
+2021-05-07 08:25:39,181 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:49] - INFO: Conv_277
+
+2021-05-07 08:25:39,181 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:50] - INFO: LayerType.CONVOLUTION
+
+2021-05-07 08:25:39,181 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:58] - INFO: CLIP_247 beta is 7.0 and alpha is -8.0
+
+2021-05-07 08:25:39,181 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:63] - INFO: Shape_278
+
+2021-05-07 08:25:39,181 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:64] - INFO: LayerType.SHAPE
+
+2021-05-07 08:25:39,181 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:69] - INFO: 420
+
+2021-05-07 08:25:39,181 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:70] - INFO: LayerType.CONSTANT
+
+2021-05-07 08:25:39,181 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:71] - INFO: ----2----network.num_layers:327
+

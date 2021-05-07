@@ -17,3 +17,18 @@
 2021-05-07 08:14:09,910 - tensorrt_engine.py[line:223] - INFO: Inference time with the TensorRT engine: 0.6129159927368164
 2021-05-07 08:14:09,910 - tensorrt_engine.py[line:224] - INFO: Inference time with the ONNX      model: 0.06923341751098633
 2021-05-07 08:14:09,910 - tensorrt_engine.py[line:225] - INFO: MSE Error = 2.022627268161159e-05
+2021-05-07 08:25:38,480 - tensorrt_engine.py[line:239] - INFO: Namespace(CALIB_IMG_DIR='../tensorrt2/coco/images/train2017', calibration_table='model_save/yolov5s_calibration.cache', engine_model_path='model_save/best_mix.trt', img_path='test_image/bus.jpg', img_size=640, onnx_model_path='model_save/best.onnx', quantize='mix')
+2021-05-07 08:25:38,480 - tensorrt_engine.py[line:170] - ERROR: please set appropriate mode for quantification.(--quantize fp32)
+2021-05-07 08:25:38,480 - tensorrt_engine.py[line:172] - INFO: *** onnx to tensorrt begin ***
+2021-05-07 08:25:38,683 - tensorrt_engine.py[line:126] - INFO: found all 118287 images to calib.
+2021-05-07 08:25:39,063 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:36] - INFO: Loading ONNX file from path model_save/best.onnx...
+2021-05-07 08:25:39,063 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:38] - INFO: Beginning ONNX file parsing
+2021-05-07 08:25:39,182 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:74] - INFO: Completed parsing of ONNX file
+2021-05-07 08:25:39,182 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:75] - INFO: Building an engine from file model_save/best.onnx; this may take a while...
+2021-05-07 08:28:15,196 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:85] - INFO: Mix mode enabled
+2021-05-07 08:28:15,198 - /home/zliu/MixPrecisionTrt/util_trt_modify.py[line:101] - INFO: Completed creating the engine
+2021-05-07 08:28:15,318 - tensorrt_engine.py[line:189] - INFO: *** onnx to tensorrt completed ***
+
+2021-05-07 08:28:15,539 - tensorrt_engine.py[line:223] - INFO: Inference time with the TensorRT engine: 0.0034646987915039062
+2021-05-07 08:28:15,539 - tensorrt_engine.py[line:224] - INFO: Inference time with the ONNX      model: 0.06717109680175781
+2021-05-07 08:28:15,539 - tensorrt_engine.py[line:225] - INFO: MSE Error = 1.4167368412017822

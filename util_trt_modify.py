@@ -13,8 +13,7 @@ from calibrator import Calibrator
 
 # add verbose
 TRT_LOGGER = trt.Logger(trt.Logger.VERBOSE)  # ** engine**
-f_layer = open('log.txt', 'w')
-log2 = Logger.Logger('network', 'info')
+log2 = Logger.Logger('network.log', 'info')
 
 # create tensorrt-engine
 # fixed and dynamic
