@@ -227,3 +227,5 @@ python detect.py --engine_model_path model_save/yolov5s.trt --img_path test_imag
 python detect.py --onnx_model_path model_save/yolov5s.trt  --img_path test_image/bus.jpg    #使用onnx检测
 ```
 
+
+
