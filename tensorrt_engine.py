@@ -1,4 +1,9 @@
 # -*-coding:utf-8-*-
+"""
+input:a strategy,trt model,image for train
+use trt model and strategy to make an engine
+
+"""
 import argparse
 import glob
 import os
@@ -144,6 +149,7 @@ class DataLoader:
 
 
 def main():
+
     strategy = [4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 4, 8, 4, 4, 8, 4, 4, 8, 4, 4, 8, 4, 4, 4, 8, 8, 4, 4, 4, 8, 4, 8, 4, 4, 4,
                 4, 8, 4, 6, 4, 8, 4, 4, 8, 6, 4, 4, 8, 4, 8, 8, 6, 4, 4, 8, 4, 4, 8, 4, 8, 4, 4]
 
@@ -178,9 +184,9 @@ def main():
                                            engine_file_path=opt.engine_model_path, fp32_mode=fp32_mode,
                                            fp16_mode=fp16_mode,
                                            int8_mode=int8_mode, calibration_stream=calibration_stream,
-                                           calibration_table_path=opt.calibration_table, save_engine=True)
+                                           calibration_table_path=opt.calibration_table, save_engine=True,log=log)
     assert engine_fixed, 'Broken engine_fixed'
-    print('*** onnx to tensorrt completed ***\n')
+    log.logger.info('*** onnx to tensorrt completed ***\n')
 
     # --------------------inference------------------
     # Input,picture
@@ -226,7 +232,7 @@ if __name__ == '__main__':
     parser.add_argument('--img_path', type=str, default='test_image/bus.jpg', help='source')
     parser.add_argument('--onnx_model_path', type=str, default='model_save/yolov5s.trt', help='model.onnx path(s)')
     parser.add_argument('--img-size', type=int, default=640, help='inference size (pixels)')
-    parser.add_argument('--CALIB_IMG_DIR', type=str, default='coco/images/train2017', help='coco images path(s)')
+    parser.add_argument('--CALIB_IMG_DIR', type=str, default='../tensorrt2/coco/images/train2017', help='coco images path(s)')
     parser.add_argument('--calibration_table', type=str, default='model_save/yolov5s_calibration.cache', help='yolov5s_calibration path(s)')
     opt = parser.parse_args()
     log = Logger.Logger('tensorrt_engine.log', 'info')

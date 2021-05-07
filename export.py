@@ -1,3 +1,4 @@
+# -*-coding:utf-8-*-
 """Exports a YOLOv5 *.pt model to ONNX and test the result
 
 Usage:

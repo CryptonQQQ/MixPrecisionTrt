@@ -1,0 +1,8 @@
+2021-05-06 21:40:00,238 - export.py[line:79] - INFO: Namespace(batch_size=24, cfg='', device='cpu', dynamic=False, grid=False, hyp='../yolov5/data/hyp.scratch.yaml', img_path='test_image/bus.jpg', img_size=[640, 640], weights='model_save/best.pt')
+2021-05-06 21:40:00,716 - export.py[line:120] - INFO: 
+Starting ONNX export with onnx 1.8.1...
+2021-05-06 21:40:02,427 - export.py[line:130] - INFO: ONNX export success, saved as model_save/best.onnx
+2021-05-06 21:40:02,592 - export.py[line:144] - INFO: Inference time with the PyTorch model: 0.1882476806640625
+2021-05-06 21:40:02,592 - export.py[line:145] - INFO: Inference time with the ONNX    model: 0.06429004669189453
+2021-05-06 21:40:02,592 - export.py[line:146] - INFO: MSE Error = 2.1944827039988013e-06
+2021-05-06 21:40:02,592 - export.py[line:147] - INFO: Exported model has been tested with ONNXRuntime, and the result looks good!

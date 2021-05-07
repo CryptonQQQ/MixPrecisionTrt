@@ -1,0 +1,19 @@
+2021-05-06 21:40:34,748 - tensorrt_engine.py[line:239] - INFO: Namespace(CALIB_IMG_DIR='coco/images/train2017', calibration_table='model_save/yolov5s_calibration.cache', engine_model_path='model/best.trt', img_path='test_image/bus.jpg', img_size=640, onnx_model_path='model_save/best.onnx', quantize='fp32')
+2021-05-06 21:40:34,748 - tensorrt_engine.py[line:172] - INFO: *** onnx to tensorrt begin ***
+2021-05-06 21:41:27,641 - tensorrt_engine.py[line:239] - INFO: Namespace(CALIB_IMG_DIR='../tensorrt2/coco/images/train2017', calibration_table='model_save/yolov5s_calibration.cache', engine_model_path='model/best.trt', img_path='test_image/bus.jpg', img_size=640, onnx_model_path='model_save/best.onnx', quantize='fp32')
+2021-05-06 21:41:27,641 - tensorrt_engine.py[line:172] - INFO: *** onnx to tensorrt begin ***
+2021-05-06 21:41:27,839 - tensorrt_engine.py[line:126] - INFO: found all 118287 images to calib.
+2021-05-06 21:41:28,207 - /home/zliu/MixPrecisionTrt/util_trt.py[line:35] - INFO: Loading ONNX file from path model_save/best.onnx...
+2021-05-06 21:41:28,207 - /home/zliu/MixPrecisionTrt/util_trt.py[line:37] - INFO: Beginning ONNX file parsing
+2021-05-06 21:41:28,274 - /home/zliu/MixPrecisionTrt/util_trt.py[line:41] - INFO: Completed parsing of ONNX file
+2021-05-06 21:41:28,274 - /home/zliu/MixPrecisionTrt/util_trt.py[line:42] - INFO: Building an engine from file model_save/best.onnx; this may take a while...
+2021-05-06 21:42:21,717 - /home/zliu/MixPrecisionTrt/util_trt.py[line:63] - INFO: fp32 mode enabled
+2021-05-07 08:14:03,834 - tensorrt_engine.py[line:239] - INFO: Namespace(CALIB_IMG_DIR='../tensorrt2/coco/images/train2017', calibration_table='model_save/yolov5s_calibration.cache', engine_model_path='model_save/best.trt', img_path='test_image/bus.jpg', img_size=640, onnx_model_path='model_save/best.onnx', quantize='fp32')
+2021-05-07 08:14:03,835 - tensorrt_engine.py[line:172] - INFO: *** onnx to tensorrt begin ***
+2021-05-07 08:14:04,064 - tensorrt_engine.py[line:126] - INFO: found all 118287 images to calib.
+2021-05-07 08:14:04,065 - /home/zliu/MixPrecisionTrt/util_trt.py[line:75] - INFO: Reading engine from file model_save/best.trt
+2021-05-07 08:14:08,677 - tensorrt_engine.py[line:189] - INFO: *** onnx to tensorrt completed ***
+
+2021-05-07 08:14:09,910 - tensorrt_engine.py[line:223] - INFO: Inference time with the TensorRT engine: 0.6129159927368164
+2021-05-07 08:14:09,910 - tensorrt_engine.py[line:224] - INFO: Inference time with the ONNX      model: 0.06923341751098633
+2021-05-07 08:14:09,910 - tensorrt_engine.py[line:225] - INFO: MSE Error = 2.022627268161159e-05

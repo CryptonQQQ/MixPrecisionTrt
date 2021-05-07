@@ -1,5 +1,10 @@
 # tensorrt-lib
-
+# -*-coding:utf-8-*-
+"""
+use trt model to make an engine
+add layer for onnx network during making the engine
+return a mix quantification engine
+"""
 import os
 import Logger
 import tensorrt as trt

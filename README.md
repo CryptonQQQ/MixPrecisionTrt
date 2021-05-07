@@ -1,6 +1,35 @@
 # MixPrecisionTrt 
 
+##directory structure
 
+```buildoutcfg
+.
+├── calibrator.py
+├── detect.py
+├── doc
+│   ├── 3.6res.png
+│   ├── fp16_detect.png
+│   ├── fp16.png
+│   ├── fp32_detect.png
+│   ├── fp32.png
+│   ├── int4_detect.png
+│   ├── int8_detect.png
+│   ├── int8.png
+│   ├── Ours.png
+│   └── v5sfp16.png
+├── export.py
+├── LICENSE
+├── Logger.py
+├── netron_yolov5s.py
+├── README.md
+├── tensorrt_engine.py
+├── test_image
+│   ├── bus.jpg
+│   └── zidane.jpg
+├── util_trt_modify.py
+└── util_trt.py
+
+```
 
 ## 一· 环境搭建
 
