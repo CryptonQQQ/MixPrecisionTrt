@@ -9,6 +9,8 @@
 ├── doc
 │   ├── 3.6res.png
 │   ├── ...
+├── result
+│   ├── mix_res.json
 ├── export.py
 ├── LICENSE
 ├── Logger.py
