@@ -3,13 +3,15 @@ import os
 import logging
 from logging import handlers
 
-#make sure the exist of filepath
+
+# make sure the exist of filepath
 def mkdir(path):
     if not os.path.exists(path):
         os.system(r"touch {}".format(path))  # 调用系统命令行来创建文件
         logging.info("'{}'file path did not exits and has been created successfully.".format(path))
     else:
         logging.info("'{}' exits and loads successfully.".format(path))
+
 
 class Logger:
     """
@@ -40,4 +42,3 @@ class Logger:
 
         self.logger.addHandler(stream_handler)
         self.logger.addHandler(file_handler)
-

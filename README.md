@@ -200,6 +200,9 @@ yolov5s_mix.trt
 <img src="./doc/int4_detect.png" alt="int4_detect" style="zoom:80%;" />
 
 ### mAP
+
+`python3 coco_map.py`
+
 ```
  Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.052
  Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.128
